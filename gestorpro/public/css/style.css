@@ -1,0 +1,197 @@
+/* =====================================================
+   GestorPro - Folha de estilo personalizada
+   Complementa o Bootstrap 5
+   ===================================================== */
+
+/* ── Body e layout ── */
+html, body {
+    height: 100%;
+}
+
+body {
+    background-color: #f4f6f9;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
+}
+
+/* ── Navbar ── */
+.navbar-brand {
+    font-size: 1.3rem;
+    letter-spacing: .03rem;
+}
+
+.navbar .nav-link {
+    font-size: .92rem;
+    padding: .45rem .8rem;
+    border-radius: 6px;
+    transition: background .15s;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link.active {
+    background: rgba(255,255,255,.12);
+}
+
+/* ── Cards ── */
+.card {
+    border: 1px solid #e3e8ef;
+    border-radius: 10px;
+    box-shadow: 0 1px 4px rgba(0,0,0,.06);
+}
+
+.card-header {
+    background: #fff;
+    border-bottom: 1px solid #e3e8ef;
+    font-weight: 600;
+    font-size: .95rem;
+}
+
+/* ── Tabelas ── */
+.table thead th {
+    background: #f8f9fb;
+    font-size: .8rem;
+    text-transform: uppercase;
+    letter-spacing: .06em;
+    color: #6c757d;
+    border-bottom: 2px solid #e3e8ef;
+}
+
+.table tbody tr:hover {
+    background: #f0f4ff;
+}
+
+/* ── Formulários ── */
+.form-label {
+    font-weight: 600;
+    font-size: .875rem;
+    color: #374151;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: #198754;
+    box-shadow: 0 0 0 .2rem rgba(25,135,84,.2);
+}
+
+/* ── Botões ── */
+.btn {
+    border-radius: 7px;
+    font-weight: 500;
+}
+
+/* ── Cards de produto (tela seleção) ── */
+.produto-card {
+    border: 2px solid #e3e8ef;
+    border-radius: 12px;
+    transition: all .2s ease;
+    cursor: pointer;
+    position: relative;
+    background: #fff;
+}
+
+.produto-card:hover {
+    border-color: #198754;
+    box-shadow: 0 4px 16px rgba(25,135,84,.15);
+    transform: translateY(-2px);
+}
+
+.produto-card.selecionado {
+    border-color: #198754;
+    background: #f0fff6;
+    box-shadow: 0 4px 16px rgba(25,135,84,.2);
+}
+
+.produto-card .check-overlay {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 26px;
+    height: 26px;
+    border: 2px solid #dee2e6;
+    border-radius: 50%;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    transition: all .2s;
+}
+
+.produto-card.selecionado .check-overlay {
+    background: #198754;
+    border-color: #198754;
+    color: #fff;
+}
+
+.produto-card .preco {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #198754;
+}
+
+/* ── Cesta / Badge ── */
+.badge-cesta-navbar {
+    min-width: 18px;
+}
+
+/* ── Alertas de AJAX ── */
+#alertaContainer {
+    position: fixed;
+    top: 70px;
+    right: 20px;
+    z-index: 9999;
+    min-width: 300px;
+}
+
+#alertaContainer .alert {
+    animation: slideIn .25s ease;
+}
+
+@keyframes slideIn {
+    from { opacity: 0; transform: translateX(30px); }
+    to   { opacity: 1; transform: translateX(0); }
+}
+
+/* ── Dashboard stat cards ── */
+.stat-card {
+    border-radius: 12px;
+    border: none;
+    box-shadow: 0 2px 8px rgba(0,0,0,.08);
+}
+
+.stat-card .icon-wrap {
+    width: 54px;
+    height: 54px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6rem;
+}
+
+/* ── Spinner de carregamento ── */
+.spinner-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(255,255,255,.5);
+    z-index: 1055;
+    align-items: center;
+    justify-content: center;
+}
+
+.spinner-overlay.ativo {
+    display: flex;
+}
+
+/* ── Responsivo ── */
+@media (max-width: 576px) {
+    .produto-card { margin-bottom: .75rem; }
+    #alertaContainer { left: 10px; right: 10px; min-width: unset; }
+}
